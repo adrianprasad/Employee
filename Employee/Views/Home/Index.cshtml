@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Employee.ViewModels
+
+@model EmployeeViewModel
+
+<div class="container mt-3 registration">
+    <div class="h2 text-center mb-3">
+        Register
+    </div>
+    <form asp-action="Index" asp-controller="Home" method="post" enctype="multipart/form-data">
+        @* First Name *@
+        <div class="form-floating mb-4">
+            <input asp-for="FirstName" class="form-control" />
+            <label class="form-label" asp-for="FirstName"></label>
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+        </div>
+
+        @* Last Name *@
+        <div class="form-floating mb-4">
+            <input asp-for="LastName" class="form-control" />
+            <label class="form-label" asp-for="LastName"></label>
+            <span class="text-danger" asp-validation-for="LastName"></span>
+        </div>
+
+        @* Salary *@
+        <div class="form-floating mb-4">
+            <input asp-for="Salary" class="form-control" />
+            <label class="form-label" asp-for="Salary"></label>
+            <span class="text-danger" asp-validation-for="Salary"></span>
+        </div>
+
+        @* Image *@
+        <div class="form-floating mb-4">
+            <input class="form-control" type="file" asp-for="Profile" />
+            <label class="form-label" asp-for="Profile"></label>
+            <span class="text-danger" asp-validation-for="Profile"></span>
+        </div>
+
+        <div class="form-floating mb-4">
+            <input type="submit" class="btn btn-outline-primary" />
+        </div>
+    </form>
+</div>

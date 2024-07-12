@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="container mt-3">
+    <div class="employee-title text-center mb-3">
+        Employee Details
+    </div>
+    <div class="employee-grid">
+        @foreach (var employee in Model)
+        {
+            <div class="employee-card">
+                @if (!string.IsNullOrEmpty(employee.Profile))
+                {
+                    <img src="~/uploads/@employee.Profile" alt="Profile Picture" class="employee-img" />
+                }
+                <div class="employee-info">
+                    <h5>@employee.FirstName @employee.LastName</h5>
+                    <p>Salary: @employee.Salary</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
